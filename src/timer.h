@@ -50,10 +50,11 @@ namespace DirectGraphicalModels
 			}
 
 			printf("Done! (");
-			if (hrs) printf("%lld:", hrs);
-			if (min) printf("%lld:", min);
-			if (sec) printf("%lld'", sec);
-			printf("%03lld ms)\n", ms);
+			// format is changed to ld such that no warnings are produced
+			if (hrs) printf("%ld:", hrs);
+			if (min) printf("%ld:", min);
+			if (sec) printf("%ld'", sec);
+			printf("%03ld ms)\n", ms);
 		}
 	}
 }

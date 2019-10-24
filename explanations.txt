@@ -1,0 +1,34 @@
+For task 3.1. we did changes in the following files:
+
+1)---
+CMakeLists.txt
+- initially the cmake file requested OpenCV 4.0 version, although installed correctly there was problem in the proper linking
+- issue solved by changing:
+
+=>from=>
+...
+# OpenCV package
+find_package(OpenCV 4.0 REQUIRED core highgui imgproc imgcodecs PATHS "$ENV{OPENCVDIR}/build")
+...
+
+=> to => 
+...
+# OpenCV package
+find_package(OpenCV 3.4 REQUIRED core highgui imgproc imgcodecs PATHS "$ENV{OPENCVDIR}/build")
+...
+
+2)---
+include/types.h
+- comment out //#define ENABLE_BSP, in order to do the first task only
+
+3)---
+src/timer.h
+- to prevent a warning change the types of the time in the print message from %lld to %ld
+
+4)---
+main.cpp
+- fix the path to the file
+
+5)--
+Scene.cpp
+- most important changes described in the comments
